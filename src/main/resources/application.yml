@@ -1,0 +1,14 @@
+spring:
+  application:
+      name: katabank
+  datasource:
+    url: jdbc:sqlite:bankkata.db
+    driver-class-name: org.sqlite.JDBC
+    username: ""
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect

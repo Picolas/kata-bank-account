@@ -8,9 +8,10 @@ import java.math.BigDecimal;
 @Table(name = "account")
 public class AccountEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private BigDecimal balance;
 
     public AccountEntity() {}

@@ -10,6 +10,9 @@ public class AccountMapper {
     }
 
     public static AccountEntity toEntity(Account account) {
+        if (account == null) {
+            return null;
+        }
         return new AccountEntity(account.getId(), account.getBalance());
     }
 

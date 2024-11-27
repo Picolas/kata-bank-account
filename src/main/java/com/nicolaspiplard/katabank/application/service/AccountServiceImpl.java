@@ -17,10 +17,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void withdraw(Long accountId, BigDecimal amount) {
+    public Account withdraw(Long accountId, BigDecimal amount) {
         Account account = repository.findById(accountId)
                 .orElseThrow(() -> new RuntimeException("Compte non trouvé"));
         account.withdraw(amount);
         repository.save(account);
+        return account;
     }
 }

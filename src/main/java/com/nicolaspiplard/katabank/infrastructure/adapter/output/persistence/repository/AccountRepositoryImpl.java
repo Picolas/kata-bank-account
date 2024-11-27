@@ -23,8 +23,9 @@ public class AccountRepositoryImpl implements AccountRepository {
     }
 
     @Override
-    public void save(Account account) {
-        AccountEntity accountEntity = AccountMapper.toEntity(account);
-        repository.save(accountEntity);
+    public Account save(Account account) {
+        AccountEntity entity = AccountMapper.toEntity(account);
+        AccountEntity savedEntity = repository.save(entity);
+        return AccountMapper.toDomain(savedEntity);
     }
 }

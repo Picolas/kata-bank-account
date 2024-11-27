@@ -11,6 +11,9 @@ public class AccountWithdrawRequestDto {
     @Min(value = 1, message = "Le montant doit être supérieur à zéro")
     private BigDecimal amount;
 
+    public AccountWithdrawRequestDto() {
+    }
+
     public AccountWithdrawRequestDto(BigDecimal amount) {
         this.amount = amount;
     }
